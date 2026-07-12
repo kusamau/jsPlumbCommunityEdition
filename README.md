@@ -70,3 +70,11 @@ There is a full suite of unit tests checked in to the `test` and `dist/test` dir
 ## License
 
 All 1.x.x, 2.x.x, 4.x.x, 5.x.x and 6.x.x versions of jsPlumb Community edition are dual-licensed under both MIT and GPLv2. 
+
+### This fork
+
+This repository ([kusamau/jsPlumbCommunityEdition](https://github.com/kusamau/jsPlumbCommunityEdition)) is a
+fork of [jsPlumb Community Edition](https://github.com/jsplumb/community-edition). The original code's
+copyright and dual MIT/GPLv2 license terms (see [`jsPlumb-LICENSE.txt`](./jsPlumb-LICENSE.txt)) are
+unchanged and unremoved. Going forward, this fork elects to use and distribute its own changes under the
+**MIT** license — see `CLAUDE.md` for the compliance notes that apply to any future update made here.
