@@ -78,3 +78,27 @@ fork of [jsPlumb Community Edition](https://github.com/jsplumb/community-edition
 copyright and dual MIT/GPLv2 license terms (see [`jsPlumb-LICENSE.txt`](./jsPlumb-LICENSE.txt)) are
 unchanged and unremoved. Going forward, this fork elects to use and distribute its own changes under the
 **MIT** license — see `CLAUDE.md` for the compliance notes that apply to any future update made here.
+
+#### Installing this fork directly
+
+This repository ships its built `@jsplumb/browser-ui` bundle (`dist/browser-ui`) checked in, so it can be
+installed directly from GitHub as a git dependency, without a registry publish:
+
+```json
+{
+  "dependencies": {
+    "@jsplumb/browser-ui": "github:kusamau/jsPlumbCommunityEdition#claude/npm-installable-89glkk"
+  }
+}
+```
+
+or from the command line:
+
+```
+npm install github:kusamau/jsPlumbCommunityEdition#claude/npm-installable-89glkk
+```
+
+Because the installed name matches the upstream package, this is a drop-in override — existing
+`import ... from '@jsplumb/browser-ui'` code keeps working unchanged. For reproducible installs, prefer
+pinning to a specific commit SHA or tag instead of a branch name, e.g.
+`github:kusamau/jsPlumbCommunityEdition#<commit-sha>`.
