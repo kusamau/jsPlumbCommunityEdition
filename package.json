@@ -1,10 +1,19 @@
 {
+  "name": "@jsplumb/browser-ui",
   "private": true,
   "version": "6.2.10",
-  "workspaces": [
-    "ts/*"
-  ],
   "description": "Visual connectivity for webapps",
+  "main": "dist/browser-ui/js/jsplumb.browser-ui.cjs.js",
+  "module": "dist/browser-ui/js/jsplumb.browser-ui.es.js",
+  "types": "dist/browser-ui/types/index.d.ts",
+  "files": [
+    "dist/browser-ui/js/jsplumb.browser-ui.cjs.js",
+    "dist/browser-ui/js/jsplumb.browser-ui.es.js",
+    "dist/browser-ui/js/jsplumb.browser-ui.umd.js",
+    "dist/browser-ui/css/*.css",
+    "dist/browser-ui/types/**/*.d.ts",
+    "jsPlumb-LICENSE.txt"
+  ],
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -13,9 +22,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "init": "node ./install.js",
     "clean": "rm -rf _apidoc_models/*;rm -rf _build_es6/*;rm -rf dist",
-    "build": "set -e;echo \"\n--- Running Typescript build\";npx tsc",
+    "compile": "set -e;echo \"\n--- Running Typescript build\";npx tsc",
     "babel": "echo \"--- Running Babel. This build target is just for debugging any build issues, and not part of the normal build\n\";./node_modules/.bin/babel ./ts --out-dir _build --extensions \".ts,.tsx\" --source-maps",
-    "package": "echo \"\n--- Building and packaging...\n\"; set -e;rm -rf dist;mkdir dist;npm run build;npm run rollup;npm run copy-defs;npm run copy-package-json;npm run copy-css",
+    "package": "echo \"\n--- Building and packaging...\n\"; set -e;rm -rf dist;mkdir dist;npm run compile;npm run rollup;npm run copy-defs;npm run copy-package-json;npm run copy-css",
     "copy-css": "node ./scripts/copy-css.js",
     "copy-package-json": "echo \"\n--- Copying package jsons into distribution directories...\n\"; node ./scripts/copy-package-json.js",
     "copy-defs": "echo \"\n--- Copying typescript definitions into distribution directories...\n\"; node ./scripts/copy-typescript-defs.js",
@@ -28,7 +37,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/jsplumb/community-edition.git"
+    "url": "git+https://github.com/kusamau/jsPlumbCommunityEdition.git"
   },
   "keywords": [
     "javascript",
